@@ -8,28 +8,19 @@
 // 4 | 64
 // 5 | 125
 
-Console.WriteLine("Введите число: ");
-int cube = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число:");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number > 0) TableOfDigits(number);
+else Console.WriteLine("Введите число больше 0");
 
-void Cube(int[] cube)
+
+void TableOfDigits(int digit)
 {
-  int counter = 0;
-  int length = cube.Length;
-  while (counter <  length){
-    cube[counter] = Convert.ToInt32(Math.Pow(counter, 3));
-    counter++;
-  }
+    for (int count = 1; count <= digit; count++)
+    {
+        Console.WriteLine($"|{count,4}|{Math.Pow(count, 3),4}|");
+    }
 }
-
-void PrintArray(int[] coll)
-{
-  int count = coll.Length;
-  int index = 0;
-  while(index < count){
-    Console.Write(coll[index]+ " ");
-    index++;
-  }
-} 
 
 int[] array = new int[cube+1];
 Cube(array);

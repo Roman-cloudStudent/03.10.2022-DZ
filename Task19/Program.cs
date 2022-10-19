@@ -6,21 +6,19 @@
 // 12821 -> да
 // 23432 -> да
 
-Console.Write("Введите число: ");
-string number = Console.ReadLine();
+Console.WriteLine("Введите пятизначное число:");
+int fiveDigit = Math.Abs(Convert.ToInt32(Console.ReadLine()));  
 
-void CheckingNumber(string number)
+if (fiveDigit >= 10000 && fiveDigit < 100000)
+    if (FiveDigitNumber(fiveDigit))
+        Console.WriteLine("да");
+    else
+        Console.WriteLine("нет");
+else
+    Console.WriteLine("Введённое число не пятизначное! Введите пятизначное число.");
+
+bool FiveDigitNumber(int number)
 {
-  if (number[0] == number[4] || number[1] == number[3])
-  {
-    Console.WriteLine($"Ваше число: {number} - палиндром.");
-  }
-  else Console.WriteLine($"Ваше число: {number} - НЕ палиндром.");
+    bool result = number / 10000 == number % 10 && number / 1000 % 10 == number / 10 % 10;
+    return result;
 }
-
-if (number!.Length == 5)
-{
-  CheckingNumber(number);
-}
-else Console.WriteLine($"Введи правильное число: ");
-
