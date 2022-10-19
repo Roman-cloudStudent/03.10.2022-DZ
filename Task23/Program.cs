@@ -22,6 +22,3 @@ void TableOfDigits(int digit)
     }
 }
 
-int[] array = new int[cube+1];
-Cube(array);
-PrintArray(array);
