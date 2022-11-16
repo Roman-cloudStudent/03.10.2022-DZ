@@ -38,7 +38,7 @@ int[,] CreateMatrix(int a, int b, int min, int max)
     return myMatrix;
 }
 
-bool isElement(int[,] matrix)
+bool IsElement(int[,] matrix)
 {
     return x < rows && x >= 0 && y < columns && y >= 0;
 }
@@ -63,7 +63,7 @@ if (rows > 0 && columns > 0)
     int[,] newArray2d = CreateMatrix(rows, columns, 0, 10);
     PrintMatrix(newArray2d);
     Console.WriteLine();
-    bool c = isElement(newArray2d);
+    bool c = IsElement(newArray2d);
     if (c) Console.WriteLine($"{x}, {y} -> такой элемент в массиве есть -> {newArray2d[x, y]}");
     else if (x < 0 && y >= 0 && y < columns) Console.WriteLine("Такого элемента в массиве нет. Введите значение индекса строки больше 0.");
     else if (x >= 0 && x < rows && y < 0) Console.WriteLine("Такого элемента в массиве нет. Введите значение индекса столбца больше 0.");
